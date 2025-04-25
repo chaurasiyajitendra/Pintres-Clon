@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./others/nav.ejs') %>
+    <div class="profile w-full min-h-screen bg-zinc-800 pt-1 relative">
+        <form id="uploadform" class="hidden" action="/fileupload" method="post" enctype="multipart/form-data">
+            <input type="file" name="img" id="">
+        </form>
+        <div id="toast" class="invisible absolute left-[60%] z-2 bg-gray-800 text-white p-4 rounded-lg shadow-lg flex gap-2">
+            <button id="cancelBtn" class="bg-zinc-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+            <button id="deleteBtn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete Post</button>
+        </div>
+        <div class="profdata text-white flex flex-col gap-2 items-center mt-10">
+            <div class="relative">
+                <span id="uploadpf" class="cursor-pointer w-10 h-10 absolute bottom-0 right-2 rounded-full flex items-center justify-center bg-zinc-200">
+                    <i class=" text-xl text-black ri-pencil-line"></i>
+                </span>
+                <div class="w-40 h-40 bg-zinc-200 rounded-full overflow-hidden cursor-pointer ">
+                    <img class="w-full h-full object-cover" src="/img/uploads/<%= user.profileimg  %>" alt="">
+                </div>
+            </div>
+            <h1 class="text-3xl font-semibold cursor-pointer"><%= user.fullname %></h1>
+            <h3 class="text-xl text-gray-200 cursor-pointer">@<%= user.username %></h3>
+            <a href="/edit" class="px-7 py-2 bg-zinc-700 rounded-full text-xs font-semibold">Edit</a>
+            <button onclick="location.href='./add'" class="bg-red-600 px-4 py-2 rounded-lg font-semibold cursor-pointer">Add to New Post</button>
+        </div>
+        <div class="cards flex flex-wrap gap-10 px-10 mt-10 text-white items-center justify-center">
+            <% user.posts.forEach((posts)=>{ %>
+                <div id="card" class="card cursor-pointer" data-post-id="<%= posts._id %>">
+                    <div class="h-94 bg-zinc-200 rounded-lg overflow-hidden">
+                        <img class="w-full h-full object-cover" src= "/img/uploads/<%= posts.img %>" alt="">
+                    </div>
+                    <h2 class="mt-2 text-sm font-semibold px-3"><%= posts.title %></h2>
+                </div>
+           <%  }) %>
+        </div>
+    </div>
+<script src="/js/nav.js"></script>
+<script src="/js/profile.js"></script>
+<script>
+document.querySelector('#uploadpf').addEventListener('click',()=>{
+    document.querySelector('#uploadform input').click();
+});
+document.querySelector('#uploadform input').addEventListener('change',()=>{
+    document.querySelector('#uploadform').submit();
+});
+
+</script>
+</body>
+</html>

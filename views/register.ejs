@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div id="main" class="w-full h-screen bg-zinc-300 flex items-center justify-center">
+        <div id="login" class="w-auto h-auto bg-zinc-200 px-14 py-16 rounded-md flex flex-col items-center justify-center ">
+            <i class="fa-brands fa-pinterest text-6xl" style="color: #e91c1c;"></i>
+            <h1 class="text-4xl text-center font-semibold">Create Account to <br> Start Pintrest</h1>
+            <form action="/register" method="post">
+                <input 
+                class="block border-1 w-full  rounded-md px-3 py-2 text-xl border-gray-500 mt-4 text-black" 
+                placeholder="username" 
+                type="text" 
+                name="username">
+                <input 
+                class="block border-1 w-full  rounded-md px-3 py-2 text-xl border-gray-500 mt-4 text-black" 
+                placeholder="Full Name" 
+                type="text" 
+                name="fullname">
+                <input 
+                class="block border-1 w-full  rounded-md px-3 py-2 text-xl border-gray-500 mt-4 text-black" 
+                placeholder="Email" 
+                type="email" 
+                name="email">
+                <input 
+                class="block border-1 w-full rounded-md px-3 py-2 text-xl border-gray-500 mt-4 text-black" 
+                placeholder="password" 
+                type="password" 
+                name="password">
+                <input 
+                class="block w-full rounded-xl bg-red-600 text-white font-semibold rounded-md px-3 py-1 text-xl border-gray-500 mt-4 text-black" 
+                type="submit" 
+                value="Create new Account">
+            </form>
+            <h2 onclick="location.href='/'" class="text-gray-500 mt-4 cursor-pointer">if you have Account ?</h2>
+        </div>
+    </div>
+</body>
+</html>

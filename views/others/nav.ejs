@@ -1,0 +1,15 @@
+
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="w-full h-14 px-4 py-2 flex items-center justify-between text-white bg-zinc-800">
+    <div onclick="location.href='../feed'" class="flex items-center gap-1 text-xl cursor-pointer">
+        <i class="fa-brands fa-pinterest" style="color: #e91c1c;"></i>
+        <h2>Pintrest</h2>
+    </div>
+    <div class="flex items-center gap-2 text-xl cursor-pointer relative">
+        <div onclick="location.href='../profile'" class="w-10 h-10 border-[0.3px] border-red-50/40 bg-zinc-200 rounded-full overflow-hidden absolute right-30">
+            <img class="h-full w-full object-cover z-0 " src="/img/uploads/<%= user.profileimg  %>" >
+        </div>
+        <button id="logout" onclick="location.href='./logout'" class="cursor-pointer bg-zinc-500 hover:bg-red-600 text-xl px-3 py-[5px] rounded-lg font-semibold hover:text-white uppercase "><i class="ri-logout-circle-r-line"></i></button>
+    </div>
+</div>
