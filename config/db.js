@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const db = mongoose.connect('mongodb://0.0.0.0/Pintrest').then(()=>{
+const db = mongoose.connect('mongodb://127.0.0.1:27017/Pintrest').then(()=>{
     console.log("Connected to data base")
 })
 
